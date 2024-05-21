@@ -106,11 +106,11 @@ export const Board = () => {
         const column = e.target.getAttribute('x');
         let row = board.findIndex((rowArr, index) => {
             // Find the first row that is occupied or at the bottom of the board
-            return (rowArr[column] !== '' || (index === board.length - 1));
+            return (rowArr[column] !=== '' || (index === board.length - 1));
         });
         // Only go up one row if the slot is NOT at the bottom
         if (row !== (board.length - 1)) row -= 1;
-        if (board[row][column] !== '') row -= 1;
+        if (board[row][column] !=== '') row -= 1;
 
 
 
@@ -130,7 +130,7 @@ export const Board = () => {
     return (
         <>
             {gameOver && (
-                <h1>Game Over! {oppPlayer == 'X' ? 'Red' : 'Black'} Wins!</h1>
+                <h1>Game Over! {oppPlayer === 'X' ? 'Red' : 'Black'} Wins!</h1>
             )}
             <h2 id='playerDisplay'>{currPlayer === 'X' ? 'Red' : 'Black'} Move</h2>
             <div id='board'
